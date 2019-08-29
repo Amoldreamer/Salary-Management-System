@@ -24,6 +24,12 @@ class EmployeeController extends Controller
         return view('employee');
     }
 
+    public function aboutUs1(){
+        $data = DB::table('aboutus')->get();
+        
+        return view('aboutUs1',compact('data'));
+    }
+
     public function viewEmployees(){
         $data = DB::table('users')
                 ->join('roles','users.role_id','=','roles.id')
@@ -158,5 +164,34 @@ class EmployeeController extends Controller
         $person = DB::table('users')->where(['Register'=>$request->register])->get();
         
         return view('displaySalarySlips',compact('year','month','data','person'));
+    }
+
+    public function editAboutus(){
+        $data = DB::table('aboutus')->get();
+        return view('editAboutus',compact('data'));
+    }
+
+    public function editAboutusFinal(Request $request){
+        $id = $request->id;
+        DB::table('aboutus')->where(['id'=>$id])->update(['aboutus'=>$request->aboutus]);
+
+        $data = DB::table('aboutus')->get();
+        
+        return view('aboutUs1',compact('data'));
+    }
+
+    public function uploadImage(Request $request){
+        if($request->hasfile('photo')){
+            $file = $request->file('photo');
+            $extension = $file->getClientOriginalExtension();
+            $fileName = time().'.'.$extension;
+            $file->move('images/',$fileName);
+        }
+        echo '<script type="text/javascript">',
+     alert('hello');
+     '</script>'
+;
+        // return view('welcome1',compact('fileName'));
+        
     }
 }

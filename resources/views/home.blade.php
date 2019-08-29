@@ -1,10 +1,10 @@
 @extends('layouts.adminapp')
 
 @section('content')
-<div class="container">
+<div class="container" style="padding-bottom:200px;">
     <div class="row justify-content-center">
         <div class="col-md-8">
-            <div class="card">
+            <div class="card" >
                 <div class="card-header" style="background-color:rgb(55, 63, 77);color:rgb(237, 213, 217)">User Dashboard</div>
 
                 <div class="card-body" style="background-color:rgb(91, 103, 122);color:rgb(237, 213, 217)">

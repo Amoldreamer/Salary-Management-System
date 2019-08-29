@@ -181,7 +181,7 @@
         <div class="container-fluid">
             <div class="row">
                     <div class="col-xl-12 ediv" style="height:10px;" ></div>
-                <div class="col-xl-12 adiv" style="height:700px;">
+                <div class="col-xl-12 adiv" style="height:auto;">
                         <div class="col-xl-8 offset-xl-2 bdiv" style="height:auto;">
                             <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
                                 <a href="#" class="navbar-brand">Salary Management System</a><br><br>
@@ -190,12 +190,13 @@
                                     <li class="nav-item"><a class="nav-link">Home</a></li>
                                     @else
                                     <li class="nav-item"><a href="welcome1" class="nav-link">Home</a></li>
-                                    @endif
-                                    @if(url()->current()=="http://127.0.0.1:8000/aboutUs1")
-                                    <li class="nav-item"><a class="nav-link">About Us</a></li>
-                                    @else
-                                    <li class="nav-item"><a href="aboutUs1" class="nav-link">About Us</a></li>
-                                    @endif
+                                    @endif                                
+                                    <li class="nav-item dropdown"><a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" id="mydropdown">About Us</a>
+                                        <div class="dropdown-menu " aria-labelledby="mydropdown" style="background-color:rgb(176, 177, 207);">
+                                            <a href="aboutUs1" class="dropdown-item">view</a>
+                                            <a href='editAboutus' class="dropdown-item">Edit</a>                                
+                                        </div>
+                                    </li>
                                     <li class="nav-item dropdown"><a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" id="mydropdown">Administration</a>
                                     <div class="dropdown-menu " aria-labelledby="mydropdown" style="background-color:rgb(176, 177, 207);">
                                             <a href="newRegister" class="dropdown-item">Register</a>
@@ -249,6 +250,8 @@
                             @show
                             </div>
                             @section('displaySalarySlips')
+                            @show
+                            @section('editAboutus')
                             @show
                         </div>
                 </div>

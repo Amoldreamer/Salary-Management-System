@@ -17,9 +17,7 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('aboutUs1', function () {
-    return view('aboutUs1');
-});
+Route::get('aboutUs1', 'EmployeeController@aboutUs1');
 
 Route::get('/home', 'HomeController@index')->name('home');
 
@@ -62,3 +60,9 @@ Route::GET('viewSalaries','EmployeeController@viewSalaries');
 Route::GET('salarySlip','EmployeeController@salarySlip');
 
 Route::POST('displaySalarySlips','EmployeeController@displaySalarySlips');
+
+Route::GET('editAboutus','EmployeeController@editAboutus');
+
+Route::POST('editAboutusFinal','EmployeeController@editAboutusFinal');
+
+Route::POST('uploadImage','EmployeeController@uploadImage');

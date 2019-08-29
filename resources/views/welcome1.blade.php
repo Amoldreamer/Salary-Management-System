@@ -164,6 +164,13 @@
                                                 </div>
                                             </div>
                                         </div>
+                                        <form method="POST" action="uploadImage" enctype="multipart/form-data">
+                                            {{csrf_field()}}
+                                            <div >
+                                        <input type="file"  value="Upload Image" name="photo" />
+                                            </div>
+                                            <input type="submit" name="submit" value="submit" class="btn btn-primary"/>
+                                    </form>
                                     </div>
                                 </div>
                         </div>
